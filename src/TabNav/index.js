@@ -53,7 +53,7 @@ export default function TabNav({navigation}) {
             tabBarIcon: ({ focused }) => {
                 return (
                     <Image style={{ height: 25, width: 25, }}
-                        source={require('../assets/images/discount.png')} />
+                        source={! focused ? require('../assets/images/discount.png') : require('../assets/images/discounts.png')} />
                 )
             },
         
@@ -64,7 +64,7 @@ export default function TabNav({navigation}) {
             tabBarIcon: ({ focused }) => {
                 return (
                     <Image style={{ height: 25, width: 25, }}
-                        source={require('../assets/images/telephone.png')} />
+                        source={! focused ? require('../assets/images/telephone.png') : require('../assets/images/telephones.png')} />
                 )
             },
         

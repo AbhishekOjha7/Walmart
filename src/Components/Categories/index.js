@@ -12,20 +12,22 @@ export default function Categories({ navigation }) {
             <TouchableOpacity
                 activeOpacity={0.4}
                 style={styles.parentcard}
-                onPress={()=>navigation.navigate('Offers') }
-            >
+                onPress={()=>navigation.navigate('Offers') }>
                 <Image style={styles.card} source={item.img} />
                 <Text style={styles.titletxt}>{item.title}</Text>
             </TouchableOpacity>
         )
-
     }
-
     return (
-        <View style={{ flex: 1 }}>
-            <View style={{ flexBasis: 100, backgroundColor: '#047BD5', justifyContent: 'center', alignItems: 'flex-end', flexDirection: 'row', paddingBottom: 10 }}>
-                <Text style={{ fontSize: 18, textAlign: 'center', color: 'white', fontWeight: 'bold', marginTop: 20 }}>Categories</Text>
+        <View style={styles.parent}>
+            <View style={styles.child}>
+                <Text style={styles.childtext}>Categories</Text>
+                <TouchableOpacity
+                activeOpacity={0.4}
+                >
                 <Image style={styles.searchicon} source={require('../../assets/images/search_not.png')} />
+                </TouchableOpacity>
+
             </View>
             <FlatList
                 data={list}
@@ -66,5 +68,23 @@ const styles = StyleSheet.create({
         height: 20,
         left: 120,
 
-    }
+    },
+    parent:{
+        flex:1,
+    },
+    child:{
+        flexBasis: 100,
+         backgroundColor: '#047BD5',
+         justifyContent: 'center', 
+        alignItems: 'flex-end', 
+         flexDirection: 'row',
+         paddingBottom: 10 
+    },
+    childtext:{
+        fontSize: 18, 
+        textAlign: 'center', 
+        color: 'white', 
+        fontWeight: 'bold',
+         marginTop: 20,
+    },
 })

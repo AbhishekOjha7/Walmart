@@ -2,6 +2,7 @@ import { View, Text, SafeAreaView, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import { Link } from '@react-navigation/native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import { color } from 'react-native-reanimated'
 
 export default function DrawerContent({ navigation }) {
     console.log('navigation', navigation)
@@ -20,26 +21,29 @@ export default function DrawerContent({ navigation }) {
 
                 </View>
                 <View style={styles.already}>
-                    <Image style={{ height: 25, width: 25, }}
+                    <Image style={styles.img}
                         source={require('../assets/images/user.png')} />
                     <Text style={{ padding: 5, fontWeight: 'bold' }}>Already a Member?</Text>
                 </View>
                 <View style={styles.login}>
                         {/* <Text> {'\n\n\n\nDrawerContent'}</Text> */}
-                        <Link style={{ alignSelf: 'center', color: 'blue' }} to={{ screen: 'Login' }}>
+                        <Link style={{ alignSelf: 'center', color: '#047BD5' }} to={{ screen: 'Login' }}>
                     <TouchableOpacity>
-                        <Text>
-                            Login here
+                        <Text style={{color:'#047BD5,',fontWeight:'bold'}}>
+                            {'Login here'}
                         </Text>
                     </TouchableOpacity>
                             </Link>
 
                 </View>
+                <View style={{borderBottomWidth:1,marginTop:20,borderColor:'lightgrey'}}>
+
+                </View>
             </View>
-            <View style={{ padding: 25, paddingLeft: 10 }}>
+            <View style={{ padding: 5, paddingLeft: 10 }}>
                 <TouchableOpacity>
                     <View style={styles.locator}>
-                        <Image style={{ height: 25, width: 25, }}
+                        <Image style={styles.img}
                             source={require('../assets/images/location.png')} />
                         <Text style={{ padding: 5 }}>Store Locator</Text>
                     </View>
@@ -47,9 +51,9 @@ export default function DrawerContent({ navigation }) {
 
 
                         <Link to={{screen:'Help'}}>
-                <TouchableOpacity>
+                     <TouchableOpacity>
                     <View style={styles.locator}>
-                        <Image style={{ height: 25, width: 25, }}
+                        <Image style={styles.img}
                             source={require('../assets/images/message.png')} />
                         <Text style={{ padding: 5 }}>Help and Support</Text>
                         
@@ -57,47 +61,64 @@ export default function DrawerContent({ navigation }) {
                 </TouchableOpacity>
                         </Link>
 
+                 <Link to={{screen:'Help'}}>
                 <TouchableOpacity>
                     <View style={styles.locator}>
-                        <Image style={{ height: 25, width: 25, }}
+                        <Image style={styles.img}
                             source={require('../assets/images/phone-call.png')} />
                         <Text style={{ padding: 5 }}>Call Helpline</Text>
                     </View>
                 </TouchableOpacity>
+                </Link>
             </View>
-            <View style={{ padding: 25, paddingLeft: 10 }}>
+
+            <View style={{borderBottomWidth:1,marginTop:20,borderColor:'lightgrey'}}>
+
+            </View>
+            <View style={{ padding: 5, paddingLeft: 10}}>
                 <TouchableOpacity>
                 <View style={styles.locator}>
-                    <Text>Terms of use</Text>
+                    <Image style={styles.img}source={require('../assets/images/mark.png')}/>
+                    <Text style={{padding:5}}>{'Terms of use'}</Text>
                 </View>
                 </TouchableOpacity>
 
                  <TouchableOpacity>
                 <View style={styles.locator}>
-                    <Text>Share</Text>
+                <Image style={styles.img}source={require('../assets/images/share.png')}/> 
+                    <Text  style={{padding:5}}>{'Share'}</Text>
                 </View>
                 </TouchableOpacity>
 
                 <TouchableOpacity>
                 <View style={styles.locator}>
-                    <Text>Rate Us on App Store</Text>
+                <Image style={styles.img}source={require('../assets/images/star.png')}/> 
+                    <Text  style={{padding:5}}>{'Rate Us on App Store'}</Text>
                 </View>
                 </TouchableOpacity> 
                 <TouchableOpacity>
                 <View style={styles.locator}>
-                    <Text>Privacy Policy</Text>
+                <Image style={styles.img}source={require('../assets/images/shield.png')}/> 
+                    <Text  style={{padding:5}}>{'Privacy Policy'}</Text>
                 </View>
                 </TouchableOpacity> 
 
                 <TouchableOpacity>
                 <View style={styles.locator}>
-                    <Text>About Best Price</Text>
+                <Image style={styles.img}source={require('../assets/images/best-price.png')}/> 
+                    <Text  style={{padding:5}}>{'About Best Price'}</Text>
                 </View>
-                </TouchableOpacity> 
-                
+                </TouchableOpacity>   
                 
             </View>
 
+            <View style={{marginTop:10,padding:10}}>
+                <Text style={{fontSize:20,color:'grey'}}>{'FSSAI License No.:10014 011 001901'}</Text>
+            </View>
+
+<View style={{padding:10,backgroundColor:'lightgrey'}}>
+    <Text style={{fontSize:15,color:'grey',fontWeight:'bold'}}>{'Version 10.25.0'}</Text>
+</View>
         </SafeAreaView>
 
     )
@@ -106,7 +127,7 @@ const styles = StyleSheet.create({
     membership: {
         alignItems: 'center',
         marginTop: 20,
-        backgroundColor: 'blue',
+        backgroundColor: '#047BD5',
         width: '90%',
         alignSelf: 'center',
         height: 30,
@@ -128,12 +149,21 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         marginRight: 100,
         marginLeft: 50,
-        borderColor: 'blue'
+        borderColor: '#047BD5',
+        borderBottomWidth:1,
+        
+         
+        
     },
     locator: {
         // paddingTop: 30,
         flexDirection: 'row',
         alignItems: 'center',
-        paddingLeft: 20, marginTop: 10
+        paddingLeft: 20, marginTop: 10,
+        
+    },
+    img:{
+        height:25,
+        width:25, 
     }
 })
